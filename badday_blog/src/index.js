@@ -1,4 +1,5 @@
 import React from 'react';
+import Header from "./component/Header"
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
@@ -6,6 +7,7 @@ import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
+      <Header />
     <App />
   </React.StrictMode>,
   document.getElementById('root')
