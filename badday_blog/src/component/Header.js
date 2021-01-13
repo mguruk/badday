@@ -1,6 +1,7 @@
 import React from 'react';
-import {AppBar, Toolbar,IconButton} from '@material-ui/core';
-import { Home } from "@material-ui/icons";
+import {AppBar, Toolbar,IconButton,List,ListItemText,ListItem,Divider,ListItemIcon} from '@material-ui/core';
+import { Home} from "@material-ui/icons";
+import PermIdentityIcon from '@material-ui/icons/PermIdentity'
 import {Link} from 'react-router-dom';
 
 const navLinks = [
@@ -15,15 +16,39 @@ const Header = () => {
     return (
         <AppBar position="static">
             <Toolbar>
-            <IconButton edge="start" color="inherit" aria-label="home">
-            <Home fontSize="large" />
-            </IconButton>
-                <Link to='/about/'>
-                    <li>About</li>
+                <List>
+                    <ListItem  button component={Link} to='/home'>
+{/*            <IconButton edge="start" color="inherit" aria-label="home">*/}
+                        <ListItemIcon>
+                            <Home fontSize="large" />
+                        </ListItemIcon>
+
+                        <ListItemText primary='Badday' />
+          {/*  </IconButton>*/}
+                    </ListItem>
+                </List>
+                <List>
+                    <ListItem  button component={Link} to='/about'>
+                       {/* <ListItemIcon>
+                            <PermIdentityIcon fontSize="large"/>
+                        </ListItemIcon>*/}
+                        <ListItemText primary='About Us' />
+                    </ListItem>
+                </List>
+                <List>
+                    <ListItem  button component={Link} to='/askaquestion/'>
+                        {/* <ListItemIcon>
+                            <PermIdentityIcon fontSize="large"/>
+                        </ListItemIcon>*/}
+                        <ListItemText primary='Ask a question' />
+                    </ListItem>
+                </List>
+                {/*<Link to='/about/'>
+                    About
                 </Link>
                 <Link to='/askaquestion/'>
-                    <li>Ask a question</li>
-                </Link>
+                    Ask a question
+                </Link>*/}
             </Toolbar>
         </AppBar>
     )

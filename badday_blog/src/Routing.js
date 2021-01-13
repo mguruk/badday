@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import {Route} from 'react-router-dom';
+import {Route,Redirect} from 'react-router-dom';
 import {withRouter} from 'react-router-dom';
 
 import Home from './Pages/Home';
@@ -18,6 +18,7 @@ class Routing extends Component{
                 <Route path={HomeRoute} exact component={Home} />
                 <Route path={AboutRoute} component = {About} />
                 <Route path={AskaquestionRoute} component={Askaquestion} />
+                <Redirect to={"/"} />
             </div>
         );
     }
